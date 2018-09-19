@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Biblioteca {
 	
 	ArrayList<Aluno> alunos = new ArrayList<Aluno>(); 
+	ArrayList<Livro> livros = new ArrayList<Livro>();
+	ArrayList<Emprestimo> emprestimos = new ArrayList<Emprestimo>();
 	
 	public void cadastrarAluno(){
 		//TODO
@@ -13,65 +15,99 @@ public class Biblioteca {
 		
 		Aluno aluno = new Aluno();
 		
-		System.out.println("Informde a matricula do Aluno: ");
-		aluno.setMatricula(eMatricula.next());
+		System.out.println("Informe a matricula do Aluno: ");
+		aluno.setMatricula(matricula.next());
 		
 		System.out.println("Informe o nome do Aluno: ");
-		aluno.setNome(bNome.nextLine());
+		aluno.setNome(nome.nextLine());
+		
+		System.out.println("Digite o numero de Telefone: ");
+		aluno.setTelefone(telefone.next());
+		
+		System.out.println("Emforme seu Entereco: ");
+		aluno.setEndereco(endereco.next());
 		
 		alunos.add(aluno);       
 	}
+	
 	public void cadastrarLivro(){
 		//TODO
+		Scanner titulo = new Scanner(System.in);
+		Scanner autor = new Scanner(System.in);
+		Scanner ISBN = new Scanner(System.in);
+		Scanner editora = new Scanner(System.in);
+		
+		Livro livro = new Livro();
+		
+		System.out.println("Emforme o título do Livro");
+		livro.setTitulo(titulo.next());
+		
+		System.out.println("Emforme o autor do Livro");
+		livro.setAutor(autor.next());
+		
+		System.out.println("Digite o ISBN do Livro");
+		livro.setIsbn(ISBN.next());
+		
+		System.out.println("Emforme a editora do Livro");
+		livro.setEditora(editora.next());
+		
+		livros.add(livro);
 	}
+	
 	public void listarAlunos(){
 		//TODO
+		System.out.println("alunos cadastrados: ");
+		for(int i=0; i<alunos.size(); i++){
+			System.out.println((i+1)+"-"+ alunos.get(i));
+		}
 	}
 	public void listarLivros(){
 		//TODO
-		Scanner f = new Scanner(System.in);
-		int i=0;
-		//Aluno a=alunos.get(i);listar somente um elemento
-		alunos.size();
-		
-		for(i=0; i<alunos.size(); i++){
-			System.out.println(i+"-"+ alunos.get(i));
-			//System.out.print(i+" - Matricula: " +alunos.get(i).getMatricula() + " ");
-			//System.out.println("Nome: " +alunos.get(i).getNome());
+		System.out.println("livros cadastrados: ");
+		for(int i=0; i<livros.size(); i++){
+			System.out.println((i+1)+"-"+ livros.get(i));
+			
 		}
 	}
 	public void emprestarLivro(){
 		//TODO
-		Aluno a = new Aluno();
-		Livro l = new Livro();
-		Emprestimo e = new Emprestimo();
-		
-		a.setMatricula("12345");
-		a.setNome("Fernanda Pereira");
-		a.setTelefone("9999-99999");
-		
-		l.setTitulo("Banco de Dados");
-		l.setAutor("Aguiar");
-		
-		e.setAluno(a);
-		e.setLivro(l);
-		e.setDataEmprestimo("11/09/2018");
-		e.setStatus(Emprestimo.EMPRESTADO);
-		
-		
-		System.out.println(a);
-		System.out.println(l);
-		System.out.println(e);
-		
-	}
-	public void devolverLivro(){
-
 		Scanner e = new Scanner(System.in);
-		listarAlunos();
+		Emprestimo emprestimo = new Emprestimo();
 		
-		System.out.println("Informe o Indice que deseja remover: ");
-		//int i= e.nextInt();
-		alunos.remove(e.nextInt());
+
+		System.out.println("Informe o indice do Aluno: ");
+		emprestimo.setAluno(alunos.get(e.nextInt()-1));
 		
+		System.out.println("Informe o indice do Livro: ");
+		emprestimo.setLivro(livros.get(e.nextInt()-1));
+		
+		System.out.println("Informe a data de emprestimos: ");
+		emprestimo.setDataEmprestimo(e.next());
+		
+		emprestimo.setStatus(1);
+		emprestimos.add(emprestimo);
 	}
-}
+	
+	public void listarEmprestimo(){ 
+		System.out.println("Listar de emprestimos");
+		for(int i=0; i<emprestimos.size(); i++){	                       
+			System.out.println((i+1)+ "," + emprestimos.get(i));
+			
+		}
+	}
+	
+	public void devolverlivro(){ 
+		listarEmprestimo();
+		Scanner a = new Scanner(System.in);
+		Scanner b = new Scanner(System.in);
+		
+		System.out.println("Digite a id do Livro que deseja devolver");
+		Emprestimo emprestimos = emprestimos.get(a.nextInt()-1);
+		
+		System.out.println("Informe a data de devolução");
+		Emprestimo.setDataDevoluca(b.next());	
+		}
+	}
+	
+		
+	
