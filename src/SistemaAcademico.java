@@ -1,10 +1,11 @@
 import java.util.Scanner;
+
 public class SistemaAcademico {
 
 	public static void main(String[] args) {
-		// TODO 
+		
 		int opção;
-		Academico academicos= new Academico();
+		Academico academico= new Academico();
 		Scanner e = new Scanner(System.in);
 		do{
 			System.out.println("\nSistema de Alunos de uma Instuição:\n");
@@ -14,18 +15,18 @@ public class SistemaAcademico {
 			switch( opção )
 			{
 			    case 1:
-			    	academicos.cadastrarAluno();  
+			    	academico.cadastrarAluno();  
 			            break;
 			    
 			    case 2:
-			    	academicos.listarAlunos();
+			    	academico.listarAlunos();
 			            break;
 			    
 			    case 3:
-			    	academicos.removerAluno();
+			    	academico.removerAluno();
 			            break;
 			    case 4:
-			    	academicos.alterarAluno();
+			    	academico.alterarAluno();
 		            	break;
 		            	
 			    default:
@@ -34,5 +35,7 @@ public class SistemaAcademico {
 		
 		}while(opção<5);
 	}
+
+	
 
 }

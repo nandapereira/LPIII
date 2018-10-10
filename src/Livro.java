@@ -1,9 +1,11 @@
 
-public class Livro {
+public class Livro extends ItemAcervo {
+
 	private String titulo;
 	private String autor;
-	private String isbn;
+	private String ISBN;
 	private String editora;
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -16,11 +18,11 @@ public class Livro {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public String getIsbn() {
-		return isbn;
+	public String getISBN() {
+		return ISBN;
 	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
 	}
 	public String getEditora() {
 		return editora;
@@ -30,8 +32,7 @@ public class Livro {
 	}
 	@Override
 	public String toString() {
-		return "Livro [titulo=" + titulo + ", autor=" + autor + ", isbn=" + isbn + ", editora=" + editora + "]";
+		return "Livro [titulo=" + titulo + ", ator=" + autor + ", ISBN=" + ISBN + ", editora=" + editora + "]";
 	}
 	
-
 }

@@ -1,9 +1,17 @@
 
 public class Aluno {
-	private String matricula;
+	
+	private	String matricula;
 	private String nome;
 	private String telefone;
 	private String endereco;
+
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	public String getMatricula() {
 		return matricula;
 	}
@@ -15,12 +23,6 @@ public class Aluno {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 	public String getEndereco() {
 		return endereco;
@@ -34,5 +36,5 @@ public class Aluno {
 				+ "]";
 	}
 	
-
+	
 }
