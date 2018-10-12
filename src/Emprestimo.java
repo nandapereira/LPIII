@@ -7,7 +7,7 @@ public class Emprestimo {
 	private	 Aluno aluno;
 	private	 ItemAcervo itemAcervo;
 	private	String dataEmprestimo;
-	private	String dataDevoluca;
+	private	String dataDevolucao;
 	private	int status;
 	
 	public Aluno getAluno() {
@@ -34,12 +34,12 @@ public class Emprestimo {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 
-	public String getDataDevoluca() {
-		return dataDevoluca;
+	public String getDataDevolucao() {
+		return dataDevolucao;
 	}
 
-	public void setDataDevoluca(String dataDevoluca) {
-		this.dataDevoluca = dataDevoluca;
+	public void setDataDevolucao(String dataDevoluca) {
+		this.dataDevolucao = dataDevoluca;
 	}
 
 	public int getStatus() {
@@ -53,7 +53,7 @@ public class Emprestimo {
 	@Override
 	public String toString() {
 		return "Emprestimo [aluno=" + aluno + ", ItemAcervo=" + itemAcervo + ", dataEmprestimo=" + dataEmprestimo
-				+ ", dataDevoluca=" + dataDevoluca + ", status=" + status + "]";
+				+ ", dataDevolucao=" + dataDevolucao + ", status=" + status + "]";
 	}
 	
 	

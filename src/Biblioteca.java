@@ -94,8 +94,14 @@ public class Biblioteca {
 		System.out.println("Lista de emprestimos");
 		for(int i=0; i<emprestimos.size(); i++){	                       
 			System.out.println((i+1)+ "," + emprestimos.get(i));
-			
-		}
+		}	
+	}
+	public void listarEmprestado(){ 
+			System.out.println("Lista de Emprestados");
+			for(int i=0; i<emprestimos.size(); i++){	       
+				if (emprestimos.get(i).getStatus() == Emprestimo.EMPRESTADO)
+				System.out.println((i+1)+ "," + emprestimos.get(i));
+			}		
 	}
 	
 	public void devolver(){ 
@@ -107,7 +113,7 @@ public class Biblioteca {
 		Emprestimo emp = emprestimos.get(a.nextInt()-1);
 		
 		System.out.println("Informe a data de devolução");
-		emp.setDataDevoluca(b.next());
+		emp.setDataDevolucao(b.next());
 		emp.setStatus(Emprestimo.DEVOLVIDO);
 	}
 	public void cadastrarRevista(){
